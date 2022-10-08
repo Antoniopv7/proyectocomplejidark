@@ -1,13 +1,16 @@
-import json
+def swap(A, x, y):
+    temp = A[x]
+    A[x] = A[y]
+    A[y] = temp
 
-def ordenamiento_seleccion(lista):
-    for n in range(len(lista) - 1 ,0, -1):
-        posicion_maxima = 0
+def selectionSort(aList):
+    for i in range(len(aList)):
+        least = i
+        for k in range(i+1, len(aList)):
+            if aList[k] < aList[least]:
+                least = k                 
+        swap(aList, least, i)
 
-        for L in range(1, n + 1):
-            if lista[1] > lista[posicion_maxima]:
-                posicion_maxima = 1
-
-        temp = lista[n]
-        lista[n] = lista[posicion_maxima]
-        lista[posicion_maxima] = temp          
+my_list = [5.76,4.7,25.3,4.6,32.4,55.3,52.3,7.6,7.3,86.7,43.5]
+selectionSort(my_list)
+print(my_list)
