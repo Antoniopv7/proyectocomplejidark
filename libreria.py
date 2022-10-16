@@ -10,7 +10,7 @@ def seleccion(aList):
         swap(aList, least, i)
     return aList
 
-
+#### Funcion para cambiar posiciones en la lista
 def swap(A, x, y):
     temp = A[x]
     A[x] = A[y]
@@ -104,7 +104,83 @@ def merge(lista1, lista2):
 
 ############################# algoritmo de heapsort
 
+# devuelve el hijo izquierdo de `A[i]`
+def LEFT(i):
+    return 2*i + 1
 
 
+# devuelve el hijo derecho de `A[i]`
+def RIGHT(i):
+    return 2*i + 2
+
+
+# Función de utilidad para intercambiar dos índices en una lista
+def swap(A, i, j):
+
+    temp = A[i]
+    A[i] = A[j]
+    A[j] = temp
+
+
+# Algoritmo de heapify-down recursivo. El nodo en el índice `i` y
+# sus dos hijos directos viola la propiedad del heap
+def heapify(A, i, size):
+
+    # obtener el hijo izquierdo y derecho del nodo en el índice `i`
+    left = LEFT(i)
+    right = RIGHT(i) 
+    largest = i
+
+    # compara `A[i]` con su hijo izquierdo y derecho
+    # y encuentre el valor más grande
+    if left < size and A[left] > A[i]:
+        largest = left
+
+    if right < size and A[right] > A[largest]:
+        largest = right
+
+    # Permuta # con hijo de mayor valor y
+    # call heapify-down sobre el niño
+    if largest != i:
+        swap(A, i, largest)
+        heapify(A, largest, size)
+
+
+# Función para eliminar un elemento con la prioridad más alta (presente en la raíz)
+def pop(A, size):
+
+    # si el heap no tiene elementos
+    if size <= 0:
+        return -1
+
+    top = A[0]
+
+    # reemplaza la raíz del heap con el último elemento
+    # de la lista
+    A[0] = A[size - 1]
+    # Llamada # heapify-down en el nodo raíz
+    heapify(A, 0, size - 1)
+
+    return top
+
+
+# Función para realizar heapsort en una lista `A` de tamaño `n`
+def heapsort(A):
+
+    # crea una cola de prioridad e inicialízala según la lista dada
+    n = len(A)
+
+    # Build-heap: Llame a heapify a partir del último interno
+    # Nodo # hasta el nodo raíz
+    i = (n - 2) // 2
+    while i >= 0:
+        heapify(A, i, n)
+        i = i - 1
+
+    # salta repetidamente del heap hasta que se vacía
+    while n:
+        A[n - 1] = pop(A, n)
+        n = n - 1
+        
 
 ############################# algoritmo de heapsort
