@@ -27,7 +27,7 @@ def insercion(X):
         for j in range(i,0,-1):
             if(X[j-1] > X[j]):
                 aux=X[j]
-                X[j]=A[j-1]
+                X[j]=X[j-1]
                 X[j-1]=aux
     return X
 
