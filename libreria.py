@@ -16,19 +16,20 @@ def swap(A, x, y):
     A[x] = A[y]
     A[y] = temp
 
+
 ############################# algoritmo de seleccion
 
 ############################# algoritmo de insercion
 
 #Declaracion de Funciones
-def insercion(A):
-    for i in range(len(A)):
+def insercion(X):
+    for i in range(len(X)):
         for j in range(i,0,-1):
-            if(A[j-1] > A[j]):
-                aux=A[j]
-                A[j]=A[j-1]
-                A[j-1]=aux
-    return A
+            if(X[j-1] > X[j]):
+                aux=X[j]
+                X[j]=A[j-1]
+                X[j-1]=aux
+    return X
 
 
 ############################# algoritmo de insercion
