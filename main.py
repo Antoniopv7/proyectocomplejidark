@@ -4,7 +4,7 @@ from timeit import default_timer
 
 ####### Funcion para mostrar el menu y sus opciones
 def mostrar_menu(opciones):
-    print('Seleccione el Algorittmo de Ordenamiento que desea ejecutar:')
+    print('Seleccione el Algoritmo de Ordenamiento que desea ejecutar:')
     for clave in sorted(opciones):
         print(f' {clave}) {opciones[clave][0]}')
 
@@ -31,12 +31,12 @@ def generar_menu(opciones, opcion_salida):
 def menu_principal():
     print('Bienvenido al Menu de Algoritmos de ordenamiento')
     opciones = {
-        '1': ('Ejecutgar Algoritmo de Ordenamiento por Seleccion: ', accion1),
-        '2': ('Ejecutgar Algoritmo de Ordenamiento por Insercion: ', accion2),
-        '3': ('Ejecutgar Algoritmo de Ordenamiento por Burbuja: ', accion3),
-        '4': ('Ejecutgar Algoritmo de Ordenamiento por Quicksort: ', accion4),
-        '5': ('Ejecutgar Algoritmo de Ordenamiento por Mergesort: ', accion5),
-        '6': ('Ejecutgar Algoritmo de Ordenamiento por Heapsort: ', accion6),
+        '1': ('Ejecutar Algoritmo de Ordenamiento por Seleccion: ', accion1),
+        '2': ('Ejecutar Algoritmo de Ordenamiento por Insercion: ', accion2),
+        '3': ('Ejecutar Algoritmo de Ordenamiento por Burbuja: ', accion3),
+        '4': ('Ejecutar Algoritmo de Ordenamiento por Quicksort: ', accion4),
+        '5': ('Ejecutar Algoritmo de Ordenamiento por Mergesort: ', accion5),
+        '6': ('Ejecutar Algoritmo de Ordenamiento por Heapsort: ', accion6),
         '7': ('Salir', salir)
     }
 
